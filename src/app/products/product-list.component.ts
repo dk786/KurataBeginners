@@ -21,7 +21,7 @@ export class ProductListComponent implements OnInit {
       productName: 'Garden Cart',
       productCode: 'GDN-0023',
       releaseDate: 'March 18, 2017',
-      description: '15 Gallot calpacity cart',
+      description: '15 Gallon capacity cart',
       price: 32.99,
       starRating: 4.2,
       imageUrl: 'https://cdn.pixabay.com/photo/2019/05/05/17/06/gardening-4181074_960_720.jpg'
