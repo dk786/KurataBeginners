@@ -49,7 +49,7 @@ export class ProductListComponent implements OnInit {
       releaseDate: 'March 18, 2015',
       description: '16 oz',
       price: 12.99,
-      starRating: 4.7,
+      starRating: 3.7,
       imgUrl: 'https://cdn.pixabay.com/photo/2016/08/30/00/22/hammer-1629587_960_720.jpg'
 
     }];
@@ -65,6 +65,10 @@ export class ProductListComponent implements OnInit {
   private perfromFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLowerCase();
     return this.products.filter((product: IProduct) => product.productName.toLowerCase().indexOf(filterBy) !== -1);
+  }
+
+  onNotify(message: string): void {
+    this.pageTitle = 'Product List: ' + message;
   }
 
 }
