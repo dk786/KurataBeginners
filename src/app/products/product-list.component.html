@@ -7,13 +7,13 @@
       <div class="col-md-2">Filter By:</div>
       <div class="col-md-4">
         <!--suppress HtmlFormInputWithoutLabel -->
-        <input type="text" [(ngModel)]= 'listFilter'/>
+        <input type="text" [(ngModel)]='listFilter'/>
       </div>
     </div>
     <div class="row">
-      <div class="col-6">
-        <h4>Filtered By: {{listFilter}} </h4>
-      </div>
+      <h4>
+        Filtered By: {{listFilter}}
+      </h4>
     </div>
 
     <div class="table-responsive">
@@ -37,18 +37,22 @@
           <td>
             <!--suppress HtmlRequiredAltAttribute -->
             <img *ngIf='showImg'
-              [src]='product.imgUrl'
-              [title]='product.productName'
-              [height]='imageHeight'
-              [width]='imageWidth'>
+                 [src]='product.imgUrl'
+                 [title]='product.productName'
+                 [height]='imageHeight'
+                 [width]='imageWidth'>
           </td>
-          <td>{{product.productName}}</td>
+          <td>
+            <a [routerLink]="['/products', product.productId]">
+              {{product.productName}}
+            </a>
+          </td>
           <td>{{product.productCode | lowercase | convertToSpace: '-' }}</td>
           <td>{{product.releaseDate}}</td>
           <td>{{product.price | currency : 'GBP': 'symbol' : '1.2-2' }}</td>
           <td>
             <app-pm-star [rating]='product.starRating'
-            (notify)='onNotify ($event)'></app-pm-star>
+                         (notify)='onNotify ($event)'></app-pm-star>
           </td>
         </tr>
 
