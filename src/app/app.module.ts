@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {ProductDetailComponent} from './products/product-detail.component';
 import {WelcomeComponent} from './products/welcome.component';
 import {RouterModule} from '@angular/router';
+import {ProductDetailGuard} from './products/product-detail.guard';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {RouterModule} from '@angular/router';
       },
       {
         path: 'products/:id',
-        component: ProductDetailComponent
+        component: ProductDetailComponent,
+        canActivate: [ProductDetailGuard],
       },
       {
         path: 'welcome',

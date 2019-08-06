@@ -2,3 +2,7 @@
   padding-left:30px;
   padding-right:30px;
 }
+.container {
+  display: flow-root;
+  justify-content: initial;
+}

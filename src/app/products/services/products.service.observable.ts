@@ -16,11 +16,11 @@ export class ProductsServiceObservable {
 
   getProducts(): Observable<IProduct[]> {
     return this.http.get <IProduct[]>(this.productUrl).pipe(
-      tap(data => console.log('All: ' + JSON.stringify(data))), catchError(ProductsServiceObservable.handleError)
+      tap(data => console.log('All: ' + JSON.stringify(data))), catchError(this.handleError)
     );
   }
 
-  handleError(err: HttpErrorResponse) {
+  private handleError(err: HttpErrorResponse) {
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {
       errorMessage = `An error occurred: ${err.error.message}`;
